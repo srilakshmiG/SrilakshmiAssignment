@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/Assignment</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">admin</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.hbm2ddl.auto">update</property><!-- create,create-drop,update -->
+
+		<property name="hibernate.c3p0.min_size">5</property>
+		<property name="hibernate.c3p0.max_size">20</property>
+		<property name="hibernate.c3p0.timeout">300</property>
+		<property name="hibernate.c3p0.max_statements">50</property>
+		<property name="hibernate.c3p0.idle_test_period">3000</property>
+		<property name="hibernate.enable_lazy_load_no_trans">true</property>
+
+		<!-- <mapping class="com.dto.Person"/> <mapping class="com.dto.DriversLicense"/> -->
+		<mapping class="com.dto.Course" />
+		<mapping class="com.dto.Topic" />
+		<mapping class="com.dto.User" />
+		<mapping class="com.dto.Employee" />
+		<mapping class="com.dto.Address" />
+		<mapping class="com.dto.Customer" />
+		<mapping class="com.dto.Orders" />
+		<mapping class="com.dto.Doctor" />
+		<mapping class="com.dto.Patient" />
+		<mapping class="com.singleTable.CarPool" />
+		<mapping class="com.singleTable.Scoop" />
+		<mapping class="com.singleTable.Waze" />
+
+	</session-factory>
+</hibernate-configuration>
